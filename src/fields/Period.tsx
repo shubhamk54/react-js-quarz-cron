@@ -61,6 +61,13 @@ export default function Period(props: PeriodProps) {
     })
   }
 
+  if (allowedPeriods.includes('second')) {
+    options.push({
+      value: 'second',
+      label: locale.secondOption || DEFAULT_LOCALE_EN.secondOption,
+    })
+  }
+
   if (
     allowedPeriods.includes('reboot') &&
     shortcuts &&

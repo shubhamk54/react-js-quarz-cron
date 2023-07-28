@@ -44,7 +44,7 @@ export default function Months(props: MonthsProps) {
         grid={false}
         value={value}
         unit={{
-          ...UNITS[3],
+          ...UNITS[4],
           // Allow translation of alternative labels when using "humanizeLabels"
           // Issue #3
           alt: locale.altMonths || DEFAULT_LOCALE_EN.altMonths,

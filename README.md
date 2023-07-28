@@ -57,7 +57,7 @@ import { Cron } from 'react-js-cron'
 import 'react-js-cron/dist/styles.css'
 
 export function App() {
-  const [value, setValue] = useState('30 5 * * 1,6')
+  const [value, setValue] = useState('0 30 5 * * 1,6')
 
   return <Cron value={value} setValue={setValue} />
 }

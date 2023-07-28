@@ -3,10 +3,10 @@ import React, { useMemo } from 'react'
 import CustomSelect from '../components/CustomSelect'
 import { UNITS } from '../constants'
 import { DEFAULT_LOCALE_EN } from '../locale'
-import { MinutesProps } from '../types'
+import { SecondsProps } from '../types'
 import { classNames } from '../utils'
 
-export default function Minutes(props: MinutesProps) {
+export default function Seconds(props: SecondsProps) {
   const {
     value,
     setValue,
@@ -33,28 +33,28 @@ export default function Minutes(props: MinutesProps) {
 
   return (
     <div className={internalClassName}>
-      {period === 'hour'
-        ? locale.prefixMinutesForHourPeriod !== '' && (
+      {period === 'second'
+        ? locale.prefixSecondsForHourPeriod !== '' && (
             <span>
-              {locale.prefixMinutesForHourPeriod ||
-                DEFAULT_LOCALE_EN.prefixMinutesForHourPeriod}
+              {locale.prefixSecondsForHourPeriod ||
+                DEFAULT_LOCALE_EN.prefixSecondsForHourPeriod}
             </span>
           )
-        : locale.prefixMinutes !== '' && (
+        : locale.prefixSeconds !== '' && (
             <span>
-              {locale.prefixMinutes || DEFAULT_LOCALE_EN.prefixMinutes}
+              {locale.prefixSeconds || DEFAULT_LOCALE_EN.prefixSeconds}
             </span>
           )}
 
       <CustomSelect
         placeholder={
-          period === 'hour'
-            ? locale.emptyMinutesForHourPeriod ||
-              DEFAULT_LOCALE_EN.emptyMinutesForHourPeriod
-            : locale.emptyMinutes || DEFAULT_LOCALE_EN.emptyMinutes
+          period === 'second'
+            ? locale.emptySecondsForHourPeriod ||
+              DEFAULT_LOCALE_EN.emptySecondsForHourPeriod
+            : locale.emptySeconds || DEFAULT_LOCALE_EN.emptySeconds
         }
         value={value}
-        unit={UNITS[1]}
+        unit={UNITS[0]}
         setValue={setValue}
         locale={locale}
         className={className}
@@ -67,10 +67,10 @@ export default function Minutes(props: MinutesProps) {
         mode={mode}
       />
 
-      {period === 'hour' && locale.suffixMinutesForHourPeriod !== '' && (
+      {period === 'minute' && locale.suffixSecondsForHourPeriod !== '' && (
         <span>
-          {locale.suffixMinutesForHourPeriod ||
-            DEFAULT_LOCALE_EN.suffixMinutesForHourPeriod}
+          {locale.suffixSecondsForHourPeriod ||
+            DEFAULT_LOCALE_EN.suffixSecondsForHourPeriod}
         </span>
       )}
     </div>

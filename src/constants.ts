@@ -3,34 +3,40 @@ import { ShortcutsValues, Unit } from './types'
 export const SUPPORTED_SHORTCUTS: ShortcutsValues[] = [
   {
     name: '@yearly',
-    value: '0 0 1 1 *',
+    value: '0 0 0 1 1 *',
   },
   {
     name: '@annually',
-    value: '0 0 1 1 *',
+    value: '0 0 0 1 1 *',
   },
   {
     name: '@monthly',
-    value: '0 0 1 * *',
+    value: '0 0 0 1 * *',
   },
   {
     name: '@weekly',
-    value: '0 0 * * 0',
+    value: '0 0 0 * * 0',
   },
   {
     name: '@daily',
-    value: '0 0 * * *',
+    value: '0 0 0 * * *',
   },
   {
     name: '@midnight',
-    value: '0 0 * * *',
+    value: '0 0 0 * * *',
   },
   {
     name: '@hourly',
-    value: '0 * * * *',
+    value: '0 0 * * * *',
   },
 ]
 export const UNITS: Unit[] = [
+  {
+    type: 'seconds',
+    min: 0,
+    max: 59,
+    total: 60,
+  },
   {
     type: 'minutes',
     min: 0,
