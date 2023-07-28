@@ -14,6 +14,7 @@ export const FRENCH_LOCALE = {
   dayOption: 'jour',
   hourOption: 'heure',
   minuteOption: 'minute',
+  secondOption: 'second',
   rebootOption: 'redémarrage',
   prefixPeriod: 'Chaque',
   prefixMonths: 'en',
