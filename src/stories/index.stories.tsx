@@ -32,7 +32,7 @@ export default {
 }
 
 export function Demo() {
-  const defaultValue = '30 5 * * 1,6'
+  const defaultValue = '0 30 5 * * 1,6'
   const [values, dispatchValues] = useCronReducer(defaultValue)
   const [error, onError] = useState<CronError>()
 
@@ -524,7 +524,7 @@ export function Input() {
 }
 
 export function InputWithOnEnter() {
-  const defaultValue = '0 10 * * 1,3,5'
+  const defaultValue = '0 0 10 * * 1,3,5'
   const [values, dispatchValues] = useCronReducer(defaultValue)
 
   return (
@@ -571,7 +571,7 @@ export function InputWithOnEnter() {
 }
 
 export function ReadOnlyInput() {
-  const defaultValue = '0 10 * * 1,3,5'
+  const defaultValue = '0 0 10 * * 1,3,5'
   const [value, setValue] = useState(defaultValue)
 
   return (
@@ -636,7 +636,7 @@ export function DefaultPeriod() {
 }
 
 export function Disabled() {
-  const defaultValue = '30 5 * * 1,6'
+  const defaultValue = '0 30 5 * * 1,6'
   const [value, setValue] = useState(defaultValue)
 
   return (
@@ -658,7 +658,7 @@ export function Disabled() {
 }
 
 export function ReadOnly() {
-  const defaultValue = '30 5 * * 1,6'
+  const defaultValue = '0 30 5 * * 1,6'
   const [value, setValue] = useState(defaultValue)
 
   return (
@@ -1068,7 +1068,7 @@ export function NoClearButton() {
 
 export function ClearButtonEmptyValue() {
   const clearButtonAction = 'empty'
-  const defaultValue = '0 10 * * 1,3,5'
+  const defaultValue = '0 0 10 * * 1,3,5'
   const [value, setValue] = useState(defaultValue)
 
   return (
@@ -1446,7 +1446,7 @@ export function TwentyFourHourClock() {
 }
 
 export function NoPeriodicityOnDoubleClick() {
-  const defaultValue = '30 5 * * 1,6'
+  const defaultValue = '0 30 5 * * 1,6'
   const [value, setValue] = useState(defaultValue)
 
   return (
@@ -1534,7 +1534,7 @@ export function SingleSelectionModeAutoClose() {
 }
 
 export function RestrictPeriodAndSelection() {
-  const defaultValue = '* * 4 * 1'
+  const defaultValue = '* * * 4 * 1'
   const [value, setValue] = useState(defaultValue)
 
   return (

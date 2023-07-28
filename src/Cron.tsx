@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getCronStringFromValues, setValuesFromCronString } from './converter'
 import Hours from './fields/Hours'
 import Minutes from './fields/Minutes'
+import Seconds from './fields/Seconds'
 import MonthDays from './fields/MonthDays'
 import Months from './fields/Months'
 import Period from './fields/Period'
@@ -49,6 +50,7 @@ export default function Cron(props: CronProps) {
       'week-days',
       'hours',
       'minutes',
+      'seconds',
     ],
     allowedPeriods = [
       'year',
@@ -68,6 +70,7 @@ export default function Cron(props: CronProps) {
   const [weekDays, setWeekDays] = useState<number[] | undefined>()
   const [hours, setHours] = useState<number[] | undefined>()
   const [minutes, setMinutes] = useState<number[] | undefined>()
+  const [seconds, setSeconds] = useState<number[] | undefined>()
   const [error, setInternalError] = useState<boolean>(false)
   const [valueCleared, setValueCleared] = useState<boolean>(false)
   const previousValueCleared = usePrevious(valueCleared)
@@ -89,7 +92,8 @@ export default function Cron(props: CronProps) {
         setMonthDays,
         setMonths,
         setWeekDays,
-        setPeriod
+        setPeriod,
+        setSeconds,
       )
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -113,7 +117,8 @@ export default function Cron(props: CronProps) {
           setMonthDays,
           setMonths,
           setWeekDays,
-          setPeriod
+          setPeriod,
+          setSeconds,
         )
       }
     },
@@ -126,7 +131,7 @@ export default function Cron(props: CronProps) {
       // Only change the value if a user touched a field
       // and if the user didn't use the clear button
       if (
-        (period || minutes || months || monthDays || weekDays || hours) &&
+        (period || minutes || months || monthDays || weekDays || hours || seconds) &&
         !valueCleared &&
         !previousValueCleared
       ) {
@@ -138,6 +143,7 @@ export default function Cron(props: CronProps) {
           weekDays,
           hours,
           minutes,
+          seconds,
           humanizeValue
         )
 
@@ -158,6 +164,7 @@ export default function Cron(props: CronProps) {
       weekDays,
       hours,
       minutes,
+      seconds,
       humanizeValue,
       valueCleared,
     ]
@@ -185,6 +192,7 @@ export default function Cron(props: CronProps) {
       if (clearButtonAction === 'fill-with-every') {
         const cron = getCronStringFromValues(
           newPeriod,
+          undefined,
           undefined,
           undefined,
           undefined,
@@ -368,6 +376,23 @@ export default function Cron(props: CronProps) {
                 <Minutes
                   value={minutes}
                   setValue={setMinutes}
+                  locale={locale}
+                  period={periodForRender}
+                  className={className}
+                  disabled={disabled}
+                  readOnly={readOnly}
+                  leadingZero={leadingZero}
+                  clockFormat={clockFormat}
+                  periodicityOnDoubleClick={periodicityOnDoubleClick}
+                  mode={mode}
+                />
+              )}
+
+            {periodForRender !== 'second' &&
+              allowedDropdowns.includes('seconds') && (
+                <Seconds
+                  value={seconds}
+                  setValue={setSeconds}
                   locale={locale}
                   period={periodForRender}
                   className={className}

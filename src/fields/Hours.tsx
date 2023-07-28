@@ -40,7 +40,7 @@ export default function Hours(props: HoursProps) {
       <CustomSelect
         placeholder={locale.emptyHours || DEFAULT_LOCALE_EN.emptyHours}
         value={value}
-        unit={UNITS[1]}
+        unit={UNITS[2]}
         setValue={setValue}
         locale={locale}
         className={className}
