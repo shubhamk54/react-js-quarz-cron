@@ -5,12 +5,6 @@
 [![npm package](https://img.shields.io/npm/v/react-js-cron/latest.svg)](https://www.npmjs.com/package/react-js-cron)
 [![MIT License Badge](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/xrutayisire/react-js-cron/blob/master/LICENSE.md)
 
-[![Build](https://github.com/xrutayisire/react-js-cron/actions/workflows/build.yml/badge.svg)](https://github.com/xrutayisire/react-js-cron/actions/workflows/build.yml)
-[![Lint](https://github.com/xrutayisire/react-js-cron/actions/workflows/lint.yml/badge.svg)](https://github.com/xrutayisire/react-js-cron/actions/workflows/lint.yml)
-[![Unit tests](https://github.com/xrutayisire/react-js-cron/actions/workflows/test.yml/badge.svg)](https://github.com/xrutayisire/react-js-cron/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/xrutayisire/react-js-cron/branch/master/graph/badge.svg?token=H4I8REN489)](https://codecov.io/gh/xrutayisire/react-js-cron)
-
-Live **demo** and **usage** at [https://xrutayisire.github.io/react-js-cron/](https://xrutayisire.github.io/react-js-cron/?path=/docs/reactjs-cron--demo)
 
 ![react-js-cron example](https://raw.githubusercontent.com/xrutayisire/react-js-cron/master/react-js-cron-example.png)
 
@@ -25,6 +19,7 @@ Live **demo** and **usage** at [https://xrutayisire.github.io/react-js-cron/](ht
 - Supports locale customization
 - Supports multiple selection by double-clicking on an option
 - And many more (disabled, read-only, 12-hour clock...)
+- Support for the extra seconds paramter in cron.
 
 ## Inspired by
 
@@ -90,7 +85,7 @@ console.log('cron string:', converted)
 ```
 
 ```
-cron string: '1 2 * * *'
+cron string: '1 1 2 * * *'
 ```
 
 ## Examples
