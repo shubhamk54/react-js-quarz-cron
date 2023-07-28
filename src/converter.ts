@@ -78,10 +78,7 @@ export function setValuesFromCronString(
 
     try {
       const cronParts = parseCronString(cronString)
-      console.log('cronParts', cronParts);
-
       const period = getPeriodFromCronParts(cronParts)
-      console.log('period', period);
       setPeriod(period)
       setSeconds(cronParts[0])
       setMinutes(cronParts[1])
@@ -305,7 +302,6 @@ function parseCronString(str: string) {
   }
 
   const parts = str.replace(/\s+/g, ' ').trim().split(' ')
-  console.log('parts: ', parts);
 
   if (parts.length === 6) {
     return parts.map((partStr, idx) => {
